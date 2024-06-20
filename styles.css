@@ -1,0 +1,665 @@
+:root {
+  --text: #f8f9fa;
+  --background-1: #212529;
+  --background-2: #495057;
+  --accent-1: #adb5bd;
+  --accent-2: #dee2e6;
+  --pink: #ffc2cd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "M PLUS 1 CODE", serif;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-1);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px 10%;
+  background-color: var(--background-1);
+  z-index: 2;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--pink);
+  font-size: 34px;
+  font-weight: 700;
+  user-select: none;
+}
+
+.logo:hover {
+  animation: logo 1s infinite ease-in-out;
+}
+
+.nav-link {
+  padding-left: 1.4rem;
+  color: var(--text);
+  font-size: 26px;
+  font-weight: 550;
+}
+
+.nav-link:hover {
+  animation: blink 1s infinite ease-in-out;
+  text-decoration: underline;
+}
+
+#welcome-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#welcome-section h1 {
+  color: var(--pink);
+  font-size: 100px;
+  animation: slide-down 1s none ease;
+}
+
+strong {
+  font-size: 100px;
+  animation: jin 2s infinite linear;
+}
+
+#welcome-section p {
+  color: var(--text);
+  font-size: 40px;
+  animation: slide-up 1.1s none ease;
+}
+
+.arrow {
+  position: absolute;
+  width: 100px;
+  top: 87%;
+  left: 47%;
+  z-index: 1;
+  animation: arrow 2s infinite linear, fade-in 0.6s none ease,
+    scale-in 0.6s none ease;
+}
+
+#projects {
+  max-width: 100%;
+  background-color: var(--background-2);
+  padding: 20px 10%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#projects h2 {
+  color: var(--pink);
+  font-size: 50px;
+  padding-top: 63px;
+  padding-bottom: 10px;
+}
+
+#projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 5rem;
+}
+
+.project-tile {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .projects-subtitle {
+    text-decoration: none;
+    transform: translateX(0);
+    transition: translateX 0.5s ease-out, text-decoration 0.5s ease-out;
+  }
+
+  .projects-img {
+    transform: translateX(0);
+    border: none;
+    transition: translateX 0.5s ease-out, border 0.5s ease-out;
+  }
+}
+
+.project-tile:hover {
+  .projects-subtitle {
+    animation: blink 1s infinite ease-in-out;
+    text-decoration: underline;
+    transform: translateX(10px);
+    transition: translateX 0.25s ease-in, text-decoration 0.25s ease-in;
+  }
+
+  .projects-img {
+    transform: translateX(-10px);
+    border: 3px solid var(--pink);
+    transition: translateX 0.25s ease-in, border 0.25s ease-in;
+  }
+}
+
+.projects-img {
+  width: 300px;
+  height: 240px;
+  object-fit: cover;
+  box-shadow: 3px 3px 10px #000;
+}
+
+.projects-subtitle {
+  color: var(--text);
+  font-size: 24px;
+  padding-top: 0.7rem;
+  text-align: center;
+}
+
+#projects-show-all {
+  position: relative;
+  box-sizing: border-box;
+  height: 30px;
+}
+
+#projects-show-all-title:hover {
+  animation: blink 1s infinite ease-in-out;
+  text-decoration: underline;
+}
+
+#projects-show-all-title {
+  color: var(--pink);
+  font-size: 24px;
+}
+
+#profile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  padding-top: 5rem;
+}
+
+#profile-title {
+  color: var(--pink);
+  font-size: 84px;
+  max-width: 80%;
+}
+
+#profile-contacts {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.profile-icons {
+  color: var(--text);
+  font-size: 100px;
+  transform: translateY(0px);
+  transition: font-size 0.5s ease-out, transform 0.5s ease-out,
+    color 0.5s ease-out;
+  padding-top: 100px;
+}
+
+.profile-icons:hover {
+  color: var(--pink);
+  font-size: 130px;
+  transform: translateY(-30px);
+  transition: font-size 0.25s ease-in, transform 0.25s ease-in,
+    color 0.25s ease-in;
+}
+
+footer {
+  height: 10vh;
+  color: var(--accent-1);
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 80%;
+}
+
+.footer-text,
+#freecodecamp-icon,
+#freecodecamp-text {
+  padding-bottom: 2rem;
+  font-size: 20px;
+}
+
+#freecodecamp-link {
+  font-size: 20px;
+  display: flex;
+  color: var(--text);
+}
+
+#freecodecamp-link:hover {
+  animation: blink 1s infinite ease-in-out;
+}
+
+#freecodecamp-text {
+  padding-left: 1rem;
+}
+
+.footer-container div {
+  display: flex;
+}
+
+@keyframes logo {
+  0% {
+    color: var(--pink);
+  }
+
+  50% {
+    color: transparent;
+  }
+
+  100% {
+    color: var(--pink);
+  }
+}
+
+@keyframes blink {
+  0% {
+    color: var(--text);
+  }
+
+  50% {
+    color: var(--accent-1);
+  }
+
+  100% {
+    color: var(--text);
+  }
+}
+
+@keyframes jin {
+  0% {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color: var(--pink);
+  }
+
+  50% {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color: transparent;
+  }
+
+  100% {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color: var(--pink);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translate(0, -100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translate(0, 100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  25% {
+    opacity: 0.5;
+    transform: translate(0, 4px);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translate(0, 8px);
+  }
+
+  75% {
+    opacity: 0.5;
+    transform: translate(0, 4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 1049px) {
+  #profile-title {
+    font-size: 54px;
+  }
+}
+
+@media (max-width: 1124px) {
+  #projects-list {
+    justify-content: space-evenly;
+  }
+
+  .footer-text,
+  #freecodecamp-icon,
+  #freecodecamp-text {
+    font-size: 18px;
+  }
+  #freecodecamp-link {
+    font-size: 18px;
+  }
+
+  #freecodecamp-text {
+    padding-left: 0.1rem;
+  }
+}
+
+@media (max-width: 1469px) {
+  #profile-title {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1500px) {
+  #projects-list {
+    column-gap: 5rem;
+  }
+
+  .logo {
+    font-size: 40px;
+  }
+
+  .nav-link {
+    font-size: 30px;
+  }
+
+  strong {
+    font-size: 120px;
+  }
+
+  #welcome-section h1 {
+    font-size: 120px;
+  }
+
+  #welcome-section p {
+    font-size: 44px;
+  }
+
+  #projects h2 {
+    padding-top: 70px;
+  }
+}
+@media (min-width: 1688px) {
+  #projects h2 {
+    font-size: 62px;
+  }
+
+  .project-tile,
+  .projects-img {
+    width: 400px;
+  }
+
+  .projects-img {
+    height: 320px;
+  }
+
+  .projects-subtitle {
+    font-size: 30px;
+  }
+
+  #projects-show-all-title {
+    font-size: 30px;
+  }
+
+  #profile-title {
+    font-size: 96px;
+  }
+
+  .profile-icons {
+    font-size: 114px;
+  }
+
+  .profile-icons:hover {
+    font-size: 150px;
+  }
+
+  .footer-text,
+  #freecodecamp-icon,
+  #freecodecamp-text {
+    font-size: 25px;
+  }
+
+  #freecodecamp-link {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 2188px) {
+  .logo {
+    font-size: 57px;
+  }
+
+  .nav-link {
+    font-size: 49px;
+  }
+
+  #welcome-section h1,
+  strong {
+    font-size: 144px;
+  }
+
+  #welcome-section p {
+    font-size: 70px;
+  }
+
+  #projects h2 {
+    font-size: 69px;
+    padding-top: 87px;
+  }
+  .project-tile,
+  .projects-img {
+    width: 500px;
+  }
+
+  .projects-img {
+    height: 400px;
+  }
+
+  .projects-subtitle {
+    font-size: 40px;
+  }
+
+  #projects-show-all-title {
+    font-size: 40px;
+  }
+
+  #profile-title {
+    font-size: 125px;
+  }
+
+  .profile-icons {
+    font-size: 140px;
+  }
+
+  .profile-icons:hover {
+    font-size: 174px;
+  }
+
+  .footer-text,
+  #freecodecamp-icon,
+  #freecodecamp-text {
+    font-size: 30px;
+  }
+
+  #freecodecamp-link {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #projects {
+    height: 100vh;
+  }
+
+  #profile-title {
+    font-size: 100px;
+    text-align: center;
+  }
+
+  .footer-text,
+  #freecodecamp-icon,
+  #freecodecamp-text {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #projects {
+    height: 100%;
+  }
+
+  .footer-text,
+  #freecodecamp-icon,
+  #freecodecamp-text {
+    font-size: 11px;
+  }
+
+  #profile-title {
+    font-size: 80px;
+  }
+
+  .profile-icons {
+    font-size: 80px;
+  }
+
+  .profile-icons:hover {
+    font-size: 100px;
+  }
+
+  #freecodecamp-link {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  * {
+    overflow-x: hidden;
+  }
+
+  .logo,
+  .nav-link {
+    font-size: 23px;
+  }
+
+  #welcome-section h1,
+  strong {
+    font-size: 70px;
+  }
+
+  #welcome-section p {
+    font-size: 35px;
+  }
+
+  .arrow {
+    left: 39%;
+  }
+
+  #projects h2 {
+    padding-top: 10px;
+  }
+
+  #projects-list {
+    justify-content: center;
+  }
+
+  #projects-show-all {
+    padding-top: 0.2rem;
+  }
+
+  #profile-title {
+    font-size: 64px;
+  }
+
+  .profile-icons {
+    font-size: 50px;
+  }
+
+  .profile-icons:hover {
+    font-size: 60px;
+  }
+
+  .footer-text,
+  #freecodecamp-icon,
+  #freecodecamp-text {
+    font-size: 8px;
+  }
+
+  #freecodecamp-link {
+    font-size: 8px;
+  }
+
+  #freecodecamp-text {
+    padding-left: 0.1rem;
+  }
+}
